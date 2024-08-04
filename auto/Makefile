@@ -92,7 +92,10 @@ OpenGL-Registry/.dummy:
 	@echo "--------------------------------------------------------------------"
 	@echo "Downloading OpenGL-Registry"
 	@echo "--------------------------------------------------------------------"
-	git clone --depth=1 $(REPO_OPENGL) OpenGL-Registry
+	@{ \
+		git clone --depth=1 https://github.com/KhronosGroup/OpenGL-Registry.git OpenGL-Registry || \
+		git clone --depth=1 git@github.com:KhronosGroup/OpenGL-Registry.git OpenGL-Registry; \
+	}
 	git clone --depth=1 --branch glew $(REPO_GLFIXES) glfixes
 	touch $@
 
@@ -100,7 +103,10 @@ EGL-Registry/.dummy:
 	@echo "--------------------------------------------------------------------"
 	@echo "Downloading EGL-Registry"
 	@echo "--------------------------------------------------------------------"
-	git clone --depth=1 $(REPO_EGL) EGL-Registry
+	@{ \
+		git clone --depth=1 https://github.com/KhronosGroup/EGL-Registry.git EGL-Registry || \
+		git clone --depth=1 git@github.com:KhronosGroup/EGL-Registry.git EGL-Registry; \
+	}
 	touch $@
 
 $(EXT)/.dummy: OpenGL-Registry/.dummy EGL-Registry/.dummy
