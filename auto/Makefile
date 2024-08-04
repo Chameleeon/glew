@@ -15,9 +15,9 @@ PYTHON ?= python
 EXT          = extensions/gl
 CORE         = core/gl
 
-REPO_OPENGL  ?= https://github.com/KhronosGroup/OpenGL-Registry.git
-REPO_EGL     ?= https://github.com/KhronosGroup/EGL-Registry.git
-REPO_GLFIXES ?= https://github.com/nigels-com/glfixes
+REPO_OPENGL  ?= git@github.com:KhronosGroup/OpenGL-Registry.git
+REPO_EGL     ?= git@github.com:KhronosGroup/EGL-Registry.git
+REPO_GLFIXES ?= git@github.com:nigels-com/glfixes.git
 
 BIN = bin
 SRC = src
